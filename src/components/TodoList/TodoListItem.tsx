@@ -27,8 +27,6 @@ const TodoText = styled.span`
     font-size: 1rem;
     height: 2rem;
     align-items: center;
-    
-    
 `;
 
 const Remove = styled.div`

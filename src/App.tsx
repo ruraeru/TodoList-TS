@@ -13,7 +13,7 @@ const BigBox = styled.div`
   border-radius: 0.625rem;
 `;
 
-const BbigBox = styled.span`
+const BbigBox = styled.div`
   display: flex;
   justify-content: center;
   padding-top: 5rem;
@@ -28,12 +28,12 @@ const Todos: Array<Todo> = [
   {
     id: 1,
     text: "투두리스트2",
-    complete: false
+    complete: true
   },
   {
     id: 2,
     text: "투두리스트3",
-    complete: true
+    complete: false
   }
 ];
 
