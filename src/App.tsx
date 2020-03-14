@@ -9,12 +9,14 @@ const BigBox = styled.div`
   display: flex;
   padding-left: 1rem;
   flex-direction: column;
-  box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+  box-shadow: 0 0.1857rem 0.375rem rgba(0,0,0,0.16), 0 1857rem 0.375rem rgba(0,0,0,0.23);
+  border-radius: 0.625rem;
 `;
+
 const BbigBox = styled.span`
   display: flex;
   justify-content: center;
-  align-content: center;
+  padding-top: 5rem;
 `;
 
 const Todos: Array<Todo> = [
