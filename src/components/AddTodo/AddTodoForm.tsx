@@ -14,11 +14,13 @@ const InputBtn = styled.button`
     font-size: 20px;
     cursor: pointer;
     border: none;
+    outline: none;
 `;
 
 const InputForm = styled.form`
     display: flex;
     justify-content: center;
+    padding-bottom: 0.5rem;
 `;
 
 interface AddTodoFormProps {
