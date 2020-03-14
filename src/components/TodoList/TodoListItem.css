@@ -1,3 +1,5 @@
 .complete {
-    text-decoration: line-through;
+  text-decoration: line-through;
+  color: yellow;
+  opacity: 0.7;
 }

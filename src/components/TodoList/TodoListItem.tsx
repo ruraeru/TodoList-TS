@@ -35,7 +35,6 @@ const Remove = styled.div`
     color: #e64980;
     font-size: 2rem;
     display: flex;
-    /* padding-left: 12rem; */
     align-items: center;
 `;
 
@@ -72,7 +71,6 @@ export const TodoListItem: React.FC<TodoListItemProps> = ({ todo, toggleTodo }) 
                     e.stopPropagation();
                     // onRemove(id);
                 }}>
-                    {/* &times; */}
                     <MdClear font-size="1.5rem" />
                 </Remove>
             </Background>
