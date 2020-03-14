@@ -53,9 +53,8 @@ function App() {
   };
 
   const addTodo: AddTodo = newTodo => {
-    // newTodo.trim() !== "" && 
-    newTodo !== "" && 
-    setTodos([...todos, { text: newTodo, complete: false }]);
+    newTodo !== "" &&
+      setTodos([...todos, { text: newTodo, complete: false }]);
   };
 
   return (

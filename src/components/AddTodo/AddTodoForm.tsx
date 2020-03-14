@@ -42,7 +42,6 @@ export const AddTodoForm: React.FC<AddTodoFormProps> = ({ addTodo }) => {
         <InputForm>
             <Input type="text" value={newTodo} onChange={handleChange} />
             <InputBtn type="submit" onClick={handleSubmit}>
-                {/* &#43; */}
                 <FiPlus />
             </InputBtn>
         </InputForm>
