@@ -18,6 +18,7 @@ const Outline = styled.div`
   display: flex;
   justify-content: center;
   padding-top: 5rem;
+  font-family: "Roboto";
 `;
 
 const App: React.FC = () => {
@@ -57,7 +58,7 @@ const App: React.FC = () => {
     newTodo !== "" &&
       setTodos([...todos, { text: newTodo, complete: false }]);
   };
-
+  
   return (
     <Outline>
       <Shadow>

@@ -1,6 +1,5 @@
 import React from 'react'
-import "./TodoListItem.css";
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 import { MdClear } from 'react-icons/md';
 
 
@@ -20,33 +19,32 @@ const None = styled.div`
     justify-content: center;
     align-items: center;
     padding: 0.5rem;
-    
 `;
 
-const Label = styled.label`
-    display: flex;
-`;
-
-const CheckBox = styled.input`
-    opacity: 0;
-`;
-
-const TodoText = styled.div`
+const TodoText = styled.div<{ done: boolean }>`
     color: white;
-    background: #4470ff;
     display: flex;
     padding: 0.125rem;
     font-size: 1rem;
     height: 2rem;
     align-items: center;
+
+    ${props =>
+        props.done &&
+        css`
+      text-decoration: line-through;
+      text-decoration-color: yellow;
+      opacity: 0.7;
+    `
+    };
 `;
 
-const Remove = styled.div`
-    color: #e64980;
-    font-size: 2rem;
-    display: flex;
-    align-items: center;
-`;
+// const Remove = styled.div`
+//     color: #e64980;
+//     font-size: 2rem;
+//     display: flex;
+//     align-items: center;
+// `;
 
 
 const Background = styled.div`
@@ -55,6 +53,11 @@ const Background = styled.div`
     display: flex;
     width: 20rem;
     justify-content: space-between;
+
+    svg {
+        color: #e64980;
+        font-size: 2rem;
+    }
 `;
 
 
@@ -67,23 +70,10 @@ export const TodoListItem: React.FC<TodoListItemProps> = ({ todo, toggleTodo }) 
     return (
         <None>
             <Background>
-                <Label className={todo.complete ? "complete" : undefined}>
-                    <CheckBox
-                        type="checkbox"
-                        checked={todo.complete}
-                        onChange={() => toggleTodo(todo)}
-                    />
-                    <TodoText>
-                        {todo.text}
-                    </TodoText>
-                </Label>
-
-                <Remove onClick={e => {
-                    e.stopPropagation();
-                    // onRemove(id);
-                }}>
-                    <MdClear font-size="1.5rem" />
-                </Remove>
+                <TodoText onClick={() => toggleTodo(todo)} done={todo.complete}>
+                    {todo.text}
+                </TodoText>
+                    <MdClear />
             </Background>
         </None>
     )
