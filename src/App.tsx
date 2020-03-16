@@ -2,8 +2,9 @@ import React, { useState } from 'react';
 import { TodoList } from './components/TodoList/TodoList';
 import { AddTodoForm } from './components/AddTodo/AddTodoForm';
 import styled from 'styled-components';
+import { Todo, ToggleTodo, AddTodo } from './components/TodoList/TodoListItem';
 
-const BigBox = styled.div`
+const Shadow = styled.div`
   width: 30rem;
   padding-top: 1rem;
   display: flex;
@@ -13,32 +14,30 @@ const BigBox = styled.div`
   border-radius: 0.625rem;
 `;
 
-const BbigBox = styled.div`
+const Outline = styled.div`
   display: flex;
   justify-content: center;
   padding-top: 5rem;
 `;
 
-const Todos: Array<Todo> = [
-  {
-    id: 0,
-    text: "투두리스트1",
-    complete: true
-  },
-  {
-    id: 1,
-    text: "투두리스트2",
-    complete: true
-  },
-  {
-    id: 2,
-    text: "투두리스트3",
-    complete: false
-  }
-];
-
-function App() {
-  const [todos, setTodos] = useState(Todos);
+const App: React.FC = () => {
+  const [todos, setTodos] = useState<Todo[]>([
+    {
+      id: 0,
+      text: "투두리스트1",
+      complete: true
+    },
+    {
+      id: 1,
+      text: "투두리스트2",
+      complete: true
+    },
+    {
+      id: 2,
+      text: "투두리스트3",
+      complete: false
+    }
+  ]);
 
 
   const toggleTodo: ToggleTodo = selectedTodo => {
@@ -60,12 +59,12 @@ function App() {
   };
 
   return (
-    <BbigBox>
-      <BigBox>
+    <Outline>
+      <Shadow>
         <AddTodoForm addTodo={addTodo} />
         <TodoList todos={todos} toggleTodo={toggleTodo} />
-      </BigBox>
-    </BbigBox>
+      </Shadow>
+    </Outline>
   );
 }
 

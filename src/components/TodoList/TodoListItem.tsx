@@ -4,11 +4,23 @@ import styled from 'styled-components';
 import { MdClear } from 'react-icons/md';
 
 
+export type Todo = {
+    id?: number,
+    text: string,
+    complete: boolean;
+};
+
+export type ToggleTodo = (selectedTodo: Todo) => void;
+
+export type AddTodo = (newTodo: string) => void;
+
+
 const None = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
     padding: 0.5rem;
+    
 `;
 
 const Label = styled.label`
@@ -19,7 +31,7 @@ const CheckBox = styled.input`
     opacity: 0;
 `;
 
-const TodoText = styled.span`
+const TodoText = styled.div`
     color: white;
     background: #4470ff;
     display: flex;
@@ -42,13 +54,14 @@ const Background = styled.div`
     background: #4470ff;
     display: flex;
     width: 20rem;
+    justify-content: space-between;
 `;
 
 
 interface TodoListItemProps {
     todo: Todo;
     toggleTodo: ToggleTodo;
-}
+};
 
 export const TodoListItem: React.FC<TodoListItemProps> = ({ todo, toggleTodo }) => {
     return (

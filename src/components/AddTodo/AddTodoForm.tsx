@@ -1,6 +1,7 @@
 import React, { useState, ChangeEvent, FormEvent } from 'react';
 import styled from 'styled-components';
 import { FiPlus } from 'react-icons/fi';
+import { AddTodo } from '../TodoList/TodoListItem';
 
 const Input = styled.input`
     width: 16.25rem;
@@ -23,12 +24,12 @@ const InputForm = styled.form`
     padding-bottom: 0.5rem;
 `;
 
-interface AddTodoFormProps {
+type AddTodoFormProps = {
     addTodo: AddTodo;
 }
 
 export const AddTodoForm: React.FC<AddTodoFormProps> = ({ addTodo }) => {
-    const [newTodo, setNewTodo] = useState("");
+    const [newTodo, setNewTodo] = useState<string>("");
 
     const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
         setNewTodo(e.target.value);
